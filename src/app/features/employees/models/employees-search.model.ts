@@ -1,7 +1,7 @@
 import { SearchPagination } from '../../../shared/interfaces/search.model';
 
 export interface EmployeesSearch {
-  userName?: string;
+  name?: string;
   userEmail?: string;
   phoneNo?: string;
   departmentId?: number;

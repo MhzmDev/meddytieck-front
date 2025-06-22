@@ -5,17 +5,17 @@ const baseUrl = environment.baseUrl;
 export const Endpoints = {
   // Users Account
   tryLogin: `${baseUrl}/api/UserAccount/login`,
-  refreshToken: `${baseUrl}/api/UsersAccount/refreshToken`,
-  getEmployees: `${baseUrl}/api/UsersAccount/GetUsers`,
-  addEmployee: `${baseUrl}/api/UsersAccount/registerEmployee`,
-  updateEmployee: `${baseUrl}/api/UsersAccount/UpdateUserData`,
-  activateUser: `${baseUrl}/api/UsersAccount/ActiveUSer`,
-  deactivateUser: `${baseUrl}/api/UsersAccount`,
-  deleteUser: `${baseUrl}/api/UsersAccount/DeleteUser`,
-  getUserById: (id: string) => `${baseUrl}/api/UsersAccount/${id}`,
-  getSystemRoles: `${baseUrl}/api/UsersAccount/SystemRoles`,
+  refreshToken: `${baseUrl}/api/UserAccount/RefreshToken`,
+  getEmployees: `${baseUrl}/api/UserAccount/GetUsers`,
+  addEmployee: `${baseUrl}/api/UserAccount/registerEmployee`,
+  updateEmployee: `${baseUrl}/api/UserAccount/UpdateUserData`,
+  activateUser: `${baseUrl}/api/UserAccount/ActiveUSer`,
+  deactivateUser: `${baseUrl}/api/UserAccount`,
+  deleteUser: `${baseUrl}/api/UserAccount/DeleteUser`,
+  getUserById: (id: string) => `${baseUrl}/api/UserAccount/${id}`,
+  getSystemRoles: `${baseUrl}/api/UserAccount/SystemRoles`,
   updateUserRoles: (id: string) =>
-    `${baseUrl}/api/UsersAccount/UpdateUserRole/${id}`,
+    `${baseUrl}/api/UserAccount/UpdateUserRole/${id}`,
 
   // Areas
   getAreas: `${baseUrl}/api/Area`,

@@ -61,9 +61,9 @@ export const EmployeesStore = signalStore(
     withAreas(),
     withSystemRoles(),
   ),
-  withEntities<Employee>(),
+  // withEntities<Employee>(),
   withComputed((store) => ({
-    employees: computed(() => store.entities()),
+    employees: computed(() => store._employeesResponse()?.data),
   })),
   withMethods(
     (
@@ -238,13 +238,7 @@ export const EmployeesStore = signalStore(
     onInit(store) {
       store.getEmployees().then();
 
-      effect(() => {
-        const employeesRes = store._employeesResponse();
-        if (!employeesRes) return;
-        untracked(() => {
-          updateState(store, 'setEntities', setAllEntities(employeesRes.data));
-        });
-      });
+
       effect(() => {
         store.page();
         untracked(() => {
