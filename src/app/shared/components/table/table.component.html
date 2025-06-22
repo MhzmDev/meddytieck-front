@@ -1,0 +1,172 @@
+<div class="scrollbar-hidden w-full overflow-x-scroll">
+  @if (type() === 'table') {
+    <p-table
+      [columns]="columns()"
+      [value]="value()"
+      [paginator]="paginator()"
+      [lazy]="lazy()"
+      (onPage)="onPageChange($event)"
+      [(first)]="first"
+      [totalRecords]="totalRecords()"
+      [rows]="rows()"
+      [showCurrentPageReport]="true"
+      [currentPageReportTemplate]="'TABLE.REPORT' | translate"
+    >
+      <ng-template #header let-columns [sTypedTemplate]="headerContextType">
+        <tr>
+          @for (column of columns; track column.header) {
+            <th>
+              {{ column.header | translate }}
+            </th>
+          }
+          @if (menuItems()) {
+            <th style="width: 2rem"></th>
+          }
+        </tr>
+      </ng-template>
+
+      <ng-template
+        #body
+        let-rowData
+        let-columns="columns"
+        [sTypedTemplate]="bodyContextType"
+      >
+        @if (loading()) {
+          <tr>
+            @for (col of columns; track col.header) {
+              <td>
+                <p-skeleton
+                  width="100%"
+                  height="1rem"
+                  styleClass="mt-2"
+                  [style]="{
+                    backgroundColor: 'var(--p-surface-100)',
+                  }"
+                />
+              </td>
+            }
+          </tr>
+        } @else {
+          <tr
+            class="transaction-row p-2 transition-all duration-300 ease-in-out"
+            [ngClass]="{
+              'hover:bg-primary-50! hover:text-surface-500! cursor-pointer':
+                selectable(),
+            }"
+            (click)="
+              onRowSelect(rowData);
+              showMenuItems() && selectable() && menu.toggle($event)
+            "
+          >
+            @for (column of columns; track column.header) {
+              <td
+                [ngStyle]="{
+                  width: column.width ?? 'auto',
+                }"
+              >
+                @if (hasTemplate(column)) {
+                  <ng-container
+                    *ngTemplateOutlet="
+                      getTemplateByName(column['templateName']);
+                      context: { $implicit: rowData }
+                    "
+                  />
+                } @else {
+                  {{ getValue(rowData, column) | translate }}
+                }
+              </td>
+            }
+            @if (menuItems()) {
+              <td>
+                <button
+                  (click)="
+                    selectable() || (showMenuItems() && menu.toggle($event))
+                  "
+                  pRipple
+                  class="hover:bg-primary-50 h-8 w-8 cursor-pointer rounded-[50%] p-2 transition-all duration-300"
+                >
+                  <mtk-icon icon="menu" overrideColor overrideSize />
+                </button>
+              </td>
+            }
+            <mtk-menu [menuItems]="getMenuItems(rowData)" #menu />
+          </tr>
+        }
+      </ng-template>
+      <ng-template #emptymessage>
+        <tr>
+          <td colspan="100%">
+            <div class="flex w-full items-center justify-center py-5">
+              {{ 'COMMON.NO_DATA_FOUND' | translate }}
+            </div>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  } @else {
+    <div class="flex w-full flex-col gap-3">
+      <div class="border-surface-100 flex items-center border-b px-8 pb-4">
+        @for (column of columns(); track column.header) {
+          <div [ngStyle]="{ width: column.width ?? 'auto' }">
+            {{ column.header | translate }}
+          </div>
+        }
+      </div>
+      @if (value().length === 0 && !loading()) {
+        <div class="flex w-full items-center justify-center py-5">
+          {{ 'COMMON.NO_DATA_FOUND' | translate }}
+        </div>
+      } @else {
+        @if (loading()) {
+          @for (col of [1, 2, 3]; track col) {
+            <p-skeleton
+              width="100%"
+              height="7rem"
+              styleClass="mt-2"
+              [style]="{
+                backgroundColor: 'var(--p-surface-100)',
+              }"
+            />
+          }
+        }
+        @for (item of value(); track $index) {
+          <div
+            class="border-surface-100 group flex w-full items-center rounded-2xl border-1 p-6 transition-all duration-300"
+            [ngClass]="{
+              'hover:bg-primary-50 cursor-pointer': selectable(),
+            }"
+          >
+            <div class="flex w-full items-center">
+              @for (column of columns(); track column.header) {
+                @if (hasTemplate(column)) {
+                  <div [ngStyle]="{ width: column.width ?? 'auto' }">
+                    <ng-container
+                      *ngTemplateOutlet="
+                        getTemplateByName(column['templateName']);
+                        context: { $implicit: item }
+                      "
+                    />
+                  </div>
+                } @else {
+                  <div [ngStyle]="{ width: column.width ?? 'auto' }">
+                    {{ getValue(item, column) | translate }}
+                  </div>
+                }
+              }
+            </div>
+          </div>
+        }
+        <div class="w-full">
+          <p-paginator
+            [first]="first()"
+            [totalRecords]="totalRecords()"
+            [rows]="rows()"
+            (onPageChange)="onPageChange($event)"
+            [showCurrentPageReport]="true"
+            [currentPageReportTemplate]="'TABLE.REPORT' | translate"
+          />
+        </div>
+      }
+    </div>
+  }
+</div>

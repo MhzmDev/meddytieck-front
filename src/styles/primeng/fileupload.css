@@ -1,0 +1,18 @@
+@layer primeng-custom-style {
+  .p-fileupload {
+    @apply border-surface-200 relative h-full w-full overflow-hidden rounded-3xl border-2 border-dashed p-0 transition-all duration-300;
+  }
+
+  .p-fileupload-header {
+    @apply absolute top-0 left-0 z-2 h-full w-full p-0 opacity-0;
+  }
+
+  .p-fileupload-content {
+    @apply h-full w-full p-0;
+
+    p-progressbar,
+    .p-fileupload-file-list {
+      @apply hidden;
+    }
+  }
+}

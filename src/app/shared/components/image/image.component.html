@@ -1,0 +1,28 @@
+@if (preview()) {
+  <p-image
+    [src]="src()"
+    [alt]="alt()"
+    [ngStyle]="ngStyle()"
+    [width]="String(width())"
+    [height]="String(height())"
+    [imageClass]="imageClass()"
+    [styleClass]="styleClass()"
+    (error)="onHandleError()"
+    (load)="onLoad()"
+    [preview]="preview()"
+  />
+} @else {
+  <img
+    [ngSrc]="url() || src()"
+    [alt]="alt()"
+    [ngStyle]="ngStyle()"
+    [priority]="priority()"
+    [fill]="fill()"
+    [width]="width()"
+    [height]="height()"
+    [ngClass]="ngClass() ?? imageClass() ?? styleClass()"
+    class="h-full w-full object-cover object-center"
+    (error)="onHandleError()"
+    (load)="onLoad()"
+  />
+}

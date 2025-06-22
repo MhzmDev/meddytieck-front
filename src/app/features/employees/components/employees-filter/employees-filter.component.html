@@ -1,0 +1,61 @@
+<form class="grid grid-cols-18 items-end gap-2" [formGroup]="form">
+  <ng-container formGroupName="search">
+    <mtk-input
+      [placeholder]="'SEARCH.SEARCH' | translate"
+      formControlName="searchQuery"
+      icon="search"
+      fullWidth
+      class="col-span-4"
+    />
+    <mtk-select
+      [options]="searchByOptions()"
+      formControlName="searchBy"
+      optionLabel="name"
+      optionValue="value"
+      [label]="'SEARCH.SEARCH_BY' | translate"
+      [placeholder]="'SEARCH.SEARCH_BY' | translate"
+      fullWidth
+      class="col-span-3"
+      [showClear]="false"
+    />
+  </ng-container>
+  <ng-container formGroupName="filter">
+    <mtk-select
+      [options]="employeesStore.departments()"
+      formControlName="departmentId"
+      optionLabel="name"
+      optionValue="id"
+      [label]="'SEARCH.DEPARTMENT' | translate"
+      [placeholder]="'SEARCH.DEPARTMENT' | translate"
+      fullWidth
+      class="col-span-3"
+    />
+    <mtk-select
+      [options]="employeesStore.areas()"
+      formControlName="areaId"
+      optionLabel="name"
+      optionValue="id"
+      [label]="'SEARCH.AREA' | translate"
+      [placeholder]="'SEARCH.AREA' | translate"
+      fullWidth
+      class="col-span-3"
+    />
+    <mtk-select
+      formControlName="status"
+      [options]="statusOptions()"
+      optionLabel="name"
+      optionValue="id"
+      [label]="'SEARCH.STATUS' | translate"
+      [placeholder]="'SEARCH.STATUS' | translate"
+      fullWidth
+      class="col-span-3"
+    />
+    <p-button
+      severity="secondary"
+      [label]="'SEARCH.CLEAR' | translate"
+      class="col-span-2"
+      styleClass="text-surface-400"
+      (onClick)="onClear()"
+    />
+  </ng-container>
+</form>

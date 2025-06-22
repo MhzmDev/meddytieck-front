@@ -1,0 +1,31 @@
+@theme {
+  --font-title-ar: bahij, sans-serif;
+  --font-title-en: Urbanist, sans-serif;
+  --font-body-ar: bahij, sans-serif;
+  --font-body-en: Urbanist, sans-serif;
+  --font-title: var(--font-title-ar);
+  --font-body: var(--font-body-ar);
+  --radius-5xl: 3.125rem;
+}
+@utility container {
+  padding-left: 5%;
+  padding-right: 5%;
+  @variant md {
+    padding-left: 17%;
+    padding-right: 17%;
+  }
+}
+@utility container-fluid {
+  padding-left: 5%;
+  padding-right: 5%;
+  @variant md {
+    padding-left: 4.5%;
+    padding-right: 4.5%;
+  }
+}
+@custom-variant dark (&:where(.my-app-dark, .my-app-dark *));
+@utility scrollbar-hidden {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

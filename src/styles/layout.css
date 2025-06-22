@@ -1,0 +1,146 @@
+@layer base {
+  body {
+    height: 100%;
+    max-width: 100%;
+    line-height: inherit;
+  }
+
+  html,
+  :host {
+    height: 100%;
+    line-height: 1.5;
+  }
+
+  :root {
+    --seda-fs-xs: 70%;
+    --seda-fs-sm: 70%;
+    --seda-fs-md: 75%;
+    --seda-fs-lg: 80%;
+    --seda-fs-xl: 90%;
+    --seda-fs-xxl: 100%;
+  }
+
+  html {
+    font-size: var(--seda-fs-xs);
+    @variant sm {
+      font-size: var(--seda-fs-sm);
+    }
+    @variant md {
+      font-size: var(--seda-fs-md);
+    }
+    @variant lg {
+      font-size: var(--seda-fs-lg);
+    }
+    @variant xl {
+      font-size: var(--seda-fs-xl);
+    }
+    @variant 2xl {
+      font-size: var(--seda-fs-xxl);
+    }
+  }
+
+  h1 {
+    @apply font-title text-surface-600;
+  }
+
+  h2 {
+    @apply font-title text-surface-600;
+  }
+
+  h3 {
+    @apply font-title text-surface-600;
+  }
+
+  h4 {
+    @apply font-title text-surface-600;
+  }
+
+  p,
+  span,
+  div {
+    @apply font-body font-semibold;
+  }
+
+  .pointer {
+    cursor: pointer;
+  }
+
+  *,
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body,
+  seda-root,
+  seda-layout,
+  seda-transaction,
+  seda-products {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply bg-surface-200;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+
+    @apply bg-primary-400;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-500;
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    @apply bg-primary-600;
+  }
+
+  .rtl {
+    direction: rtl;
+  }
+}
+
+@keyframes enter {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes exit {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* @layer reset {
+  input {
+  width: 100%;
+  }
+} */
+
+::view-transition-old(root) {
+  animation: exit 0.3s ease 0s 1 normal forwards;
+}
+
+::view-transition-new(root) {
+  animation: enter 0.3s ease 0s 1 normal forwards;
+}

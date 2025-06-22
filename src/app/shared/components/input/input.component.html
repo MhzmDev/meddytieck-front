@@ -1,0 +1,88 @@
+<div class="flex flex-col gap-2" style="--p-icon-size: 1.5rem">
+  @if (label()) {
+    <label [for]="id()" class="text-sm font-bold">
+      {{ label() ?? '' | translate }}
+    </label>
+  }
+  @let iconName = icon();
+  @if (loading()) {
+    <p-skeleton
+      width="100%"
+      height="2.5rem"
+      styleClass=" min-w-[14rem]"
+      [style]="{
+        backgroundColor: 'var(--p-surface-100)',
+      }"
+    />
+  } @else {
+    @if (iconName) {
+      <p-iconfield>
+        <p-inputicon>
+          <div [class]="iconClass() + ' h-[1.5rem] w-[1.5rem]'">
+            <mtk-icon [icon]="iconName" overrideColor overrideSize />
+          </div>
+        </p-inputicon>
+
+        <input
+          [id]="id()"
+          [type]="type()"
+          [placeholder]="placeholder() ?? '' | translate"
+          pInputText
+          [formControl]="control"
+          [ngClass]="{
+            'w-full': fullWidth(),
+          }"
+          [disabled]="disabled()"
+        />
+      </p-iconfield>
+    } @else {
+      @if (type() === 'text' || type() === 'email' || type() === 'tel') {
+        <input
+          [id]="id()"
+          [type]="type()"
+          [placeholder]="placeholder() ?? '' | translate"
+          pInputText
+          [formControl]="control"
+          [ngClass]="{
+            'w-full': fullWidth(),
+          }"
+          [disabled]="disabled()"
+        />
+      }
+      @if (type() === 'password') {
+        <p-password
+          [formControl]="control"
+          [inputId]="id()"
+          [feedback]="false"
+          [placeholder]="placeholder() ?? '' | translate"
+          [styleClass]="fullWidth() ? 'w-full' : ''"
+          [disabled]="disabled()"
+        />
+      }
+      @if (type() === 'number') {
+        <p-inputNumber
+          [formControl]="control"
+          [inputId]="id()"
+          [placeholder]="placeholder() ?? '' | translate"
+          [mode]="mode()"
+          [styleClass]="fullWidth() ? 'w-full' : ''"
+          [disabled]="disabled()"
+        />
+      }
+      @if (type() === 'textarea') {
+        <textarea
+          [id]="id()"
+          [formControl]="control"
+          pTextarea
+          [placeholder]="placeholder() ?? '' | translate"
+          [ngClass]="{
+            'w-full': fullWidth(),
+          }"
+          [disabled]="disabled()"
+          [autoResize]="autoResize()"
+          [rows]="3"
+        ></textarea>
+      }
+    }
+  }
+</div>

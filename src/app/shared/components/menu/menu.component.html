@@ -1,0 +1,10 @@
+<p-menu appendTo="body" popup [model]="menuItems()" #menu>
+  <ng-template #item let-item [sTypedTemplate]="itemContextType">
+    <div class="flex cursor-pointer gap-4 p-2 px-4">
+      @if (item.icon) {
+        <mtk-icon [icon]="item.icon" overrideColor />
+      }
+      <span>{{ item.label ?? '' | translate }}</span>
+    </div>
+  </ng-template>
+</p-menu>

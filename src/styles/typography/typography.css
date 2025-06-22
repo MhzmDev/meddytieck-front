@@ -1,0 +1,8 @@
+@import './icons.css';
+
+@font-face {
+  font-family: 'bahij';
+  src: url('/fonts/Bahij_TheSansArabic-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

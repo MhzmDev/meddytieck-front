@@ -1,0 +1,44 @@
+<p-dialog [(visible)]="visible" modal draggable="false">
+  <form
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+    class="grid w-full min-w-[25rem] grid-cols-1 gap-4"
+  >
+    <ng-container formArrayName="roles">
+      <div class="flex w-full flex-col gap-3">
+        @for (role of form.controls.roles.controls; track role.value.role) {
+          <div
+            class="flex w-full justify-between gap-3"
+            [formGroupName]="$index"
+          >
+            <label for="role {{ $index }}">
+              {{ role.value.role | translateField }}
+            </label>
+            <p-toggle-switch
+              [inputId]="'role ' + $index"
+              formControlName="active"
+            />
+          </div>
+        }
+      </div>
+    </ng-container>
+  </form>
+  <ng-template #footer>
+    <div class="grid w-full grid-cols-2 gap-4 pt-4">
+      <p-button
+        [label]="'BUTTONS.ADD' | translate"
+        styleClass="w-full"
+        size="large"
+        [loading]="employeesStore.isCreateEmployeePending()"
+        (onClick)="onSubmit()"
+      />
+      <p-button
+        [label]="'BUTTONS.CANCEL' | translate"
+        severity="secondary"
+        styleClass="w-full"
+        size="large"
+        (onClick)="visible.set(false)"
+      />
+    </div>
+  </ng-template>
+</p-dialog>

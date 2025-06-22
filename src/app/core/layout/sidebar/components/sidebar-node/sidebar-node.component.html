@@ -1,0 +1,57 @@
+<li class="flex w-full grow cursor-pointer flex-col items-start">
+  <button
+    type="button"
+    class="group active:bg-primary-50 border-primary-200! focus h-full w-full cursor-pointer rounded-xl py-3 text-start transition-all duration-300 ease-in-out"
+    pRipple
+    [ngClass]="{
+      'bg-primary-50 border! px-8': isSelected(),
+      'bg-transparent px-1': !isSelected(),
+    }"
+    (click)="onNodeClick()"
+  >
+    <span
+      class="group-hover:text-primary text-md flex items-center gap-3 font-bold"
+      [ngClass]="{
+        'text-primary': isSelected() || isExpanded(),
+        'text-surface-400': !isSelected() && !isExpanded(),
+      }"
+    >
+      @let icon = node().icon;
+      @if (icon) {
+        <span class="h-[2rem] w-[2rem]">
+          <mtk-icon [icon]="icon" overrideSize overrideColor />
+        </span>
+      }
+      <span class="font-bold">
+        {{ node().label | translate }}
+      </span>
+      @if (node().children) {
+        <span class="ml-auto h-[1.5rem] w-[1.5rem] shrink-0">
+          @if (isExpanded()) {
+            <mtk-icon icon="arrow-up" overrideSize overrideColor />
+          } @else {
+            <mtk-icon icon="arrow-down" overrideSize overrideColor />
+          }
+        </span>
+      }
+    </span>
+  </button>
+  @if (node().children && isExpanded()) {
+    <ul
+      [style]="{ 'margin-inline-start': index() * 4 + 'rem' }"
+      @expand
+      @shrink
+    >
+      @for (child of node().children; track child.key) {
+        <mtk-sidebar-node
+          [selectedNode]="selectedNode()"
+          [expandedNodes]="expandedNodes()"
+          [listContainer]="listContainer()"
+          [node]="child"
+          [index]="index() + 1"
+          (nodesExpanded)="nodesExpanded.emit($event)"
+        />
+      }
+    </ul>
+  }
+</li>

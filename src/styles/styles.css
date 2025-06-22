@@ -1,0 +1,7 @@
+@import './typography/typography.css';
+@import 'tailwindcss';
+@import 'tailwindcss-primeui';
+@import './layout.css';
+@import 'primeicons/primeicons.css';
+@import './tailwindcss-theme.css';
+@import './primeng/primeng.css' layer(primeng-custom-style);

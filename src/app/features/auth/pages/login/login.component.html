@@ -1,0 +1,62 @@
+<div class="grid h-dvh grid-cols-7">
+  <div class="col-span-4">
+    <div class="flex h-full w-full flex-col items-center justify-center">
+      <div class="flex flex-col items-start justify-center gap-8">
+        <div class="h-[4rem]">
+          <mtk-icon icon="logo" overrideSize />
+        </div>
+
+        <h1 class="text-4xl font-bold">
+          <div>{{ 'AUTH.WELCOME' | translate }}</div>
+          <div>{{ 'AUTH.IN_MTK' | translate }}</div>
+        </h1>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="w-full">
+          <div class="flex w-full flex-col gap-4">
+            <div>
+              <mtk-input
+                [placeholder]="'AUTH.ENTER_EMAIL' | translate"
+                fullWidth
+                type="email"
+                formControlName="userNameEmail"
+              />
+            </div>
+            <div>
+              <mtk-input
+                [placeholder]="'AUTH.ENTER_PASSWORD' | translate"
+                fullWidth
+                type="password"
+                formControlName="userPass"
+              />
+            </div>
+            <p-button
+              [label]="'AUTH.LOGIN' | translate"
+              type="submit"
+              styleClass="w-full"
+              [loading]="authStore.isLoginPending()"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-span-3">
+    <mtk-image
+      ngClass="h-dvh!"
+      src="imgs/login-bg.png"
+      alt="login-bg"
+      [width]="863"
+      [height]="1117"
+      priority
+    />
+  </div>
+</div>
+
+<!-- @if (showOtpDialog()) {
+  <mtk-otp-dialog
+    [(visible)]="showOtpDialog"
+    [phone]="form.controls.email.getRawValue()"
+    (resendOtp)="onResendOtp()"
+    (verifyOtp)="onVerifyOtp($event)"
+  />
+} -->

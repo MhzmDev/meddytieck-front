@@ -1,0 +1,33 @@
+<p-card>
+  <ng-template #header>
+    <div class="flex items-center justify-between p-6">
+      <div class="flex flex-col gap-1">
+        <h2 class="text-lg font-bold">
+          {{ 'EMPLOYEES.EMPLOYEES_LIST' | translate }}
+        </h2>
+        <p class="text-surface-300 text-sm font-medium">
+          {{ 'EMPLOYEES.EMPLOYEES_MANAGEMENT' | translate }}
+        </p>
+      </div>
+      <p-button
+        [label]="'EMPLOYEES.ADD_NEW_EMPLOYEE' | translate"
+        (onClick)="showCreateEmployee.set(true)"
+      />
+    </div>
+    <p-divider class="my-0" styleClass="bg-surface-100" />
+  </ng-template>
+  <div class="flex flex-col gap-5">
+    <mtk-employees-filter />
+    <mtk-employees-table />
+  </div>
+</p-card>
+
+@if (showCreateEmployee()) {
+  <mtk-create-employee
+    [(visible)]="showCreateEmployee"
+    (success)="showSuccessDialog.set(true)"
+  />
+}
+@if (showSuccessDialog()) {
+  <mtk-success-dialog [(visible)]="showSuccessDialog" />
+}

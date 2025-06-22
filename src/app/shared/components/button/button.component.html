@@ -1,0 +1,21 @@
+<p-button
+  [disabled]="disabled()"
+  [label]="label() ?? '' | translate"
+  [loading]="loading()"
+  [iconPos]="iconPosition"
+  [icon]="piIcon()"
+  [variant]="variant()"
+  [severity]="severity()"
+  [style]="style()"
+  [styleClass]="styleClass() + (rounded() ? ' p-3' : '')"
+  [rounded]="rounded()"
+  (onClick)="onClick.emit($event)"
+  [size]="size()"
+>
+  @let iconName = icon();
+  @if (iconName) {
+    <div class="p4 flex h-[18px] w-[18px] shrink-0 items-center justify-center">
+      <mtk-icon [icon]="iconName" overrideColor overrideSize />
+    </div>
+  }
+</p-button>

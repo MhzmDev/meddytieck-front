@@ -1,0 +1,12 @@
+<div class="flex flex-col px-10">
+  <div class="h-[5rem] py-2 pt-5">
+    <mtk-icon icon="logo" overrideSize />
+  </div>
+  <div
+    class="scrollbar-hidden overflow-y-scroll pt-1 pb-4"
+    #listContainer
+    style="height: calc(100dvh - 5rem)"
+  >
+    <mtk-sidebar-tree [nodes]="sidebarNodes" [listContainer]="listContainer" />
+  </div>
+</div>

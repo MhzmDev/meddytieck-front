@@ -1,0 +1,13 @@
+@import "./scrollpanel.css";
+@import "./fileupload.css";
+
+:root {
+  --p-ripple-background: rgba(39, 84, 124, 0.2);
+  --p-divider-border-color: rgba(0, 0, 0, 0.07);
+}
+
+.p-overlay {
+  &:dir(rtl) {
+    right: unset;
+  }
+}

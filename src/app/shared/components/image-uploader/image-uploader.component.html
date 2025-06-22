@@ -1,0 +1,91 @@
+@if (loading()) {
+  <p-skeleton height="12rem" width="13rem" styleClass="bg-surface-100" />
+} @else {
+  <div
+    class="group flex h-[12rem] w-[13rem] max-w-[15rem] flex-shrink-0 flex-col overflow-hidden rounded-lg bg-transparent"
+  >
+    <p-fileupload
+      #fileUpload
+      name="myfile[]"
+      accept="image/*"
+      class="h-full"
+      styleClass="h-full w-full"
+      (onSelect)="onSelect($event)"
+      (onRemove)="onDelete()"
+      [styleClass]="isImageAvailable() ? 'p-0' : 'p-5'"
+    >
+      <ng-template #header let-chooseCallback="chooseCallback">
+        <button class="h-full w-full cursor-pointer" (click)="chooseCallback()">
+          <!-- hidden content -->
+        </button>
+      </ng-template>
+      <ng-template
+        #content
+        let-files
+        let-uploadedFiles="uploadedFiles"
+        let-removeFileCallback="removeFileCallback"
+        let-removeUploadedFileCallback="removeUploadedFileCallback"
+        let-chooseCallback="chooseCallback"
+        [sTypedTemplate]="contentContextType"
+      >
+        @if (uploadedFiles.length > 0 || imageUrl()) {
+          <div
+            class="align-center flex h-full w-full flex-col justify-center gap-8"
+          >
+            @let image = uploadedFiles[0];
+            @let imageUrlText = getImageUrl(imageUrl());
+            @if (image || imageUrlText) {
+              <div
+                class="relative flex h-full w-full flex-col items-center justify-center"
+              >
+                <img
+                  [src]="image || imageUrlText"
+                  alt="uploaded image"
+                  class="h-full w-full object-cover"
+                />
+                <div
+                  class="absolute top-0 left-0 z-10 hidden h-full w-full flex-col items-center justify-center gap-3 px-9 group-hover:flex"
+                >
+                  <div
+                    class="bg-surface-950 absolute top-0 left-0 z-0 h-full w-full opacity-75"
+                  ></div>
+                  <p-button
+                    label="Edit"
+                    class="w-[8rem]"
+                    styleClass="w-[8rem]"
+                    icon="pi pi-pencil"
+                    (onClick)="chooseCallback()"
+                  />
+                  <p-button
+                    label="Delete"
+                    class="w-[8rem]"
+                    styleClass="w-[8rem]"
+                    icon="pi pi-trash"
+                    severity="danger"
+                    (onClick)="removeFileCallback()"
+                  />
+                </div>
+              </div>
+            }
+          </div>
+        }
+      </ng-template>
+
+      <ng-template #empty>
+        @if (!isImageAvailable()) {
+          <div
+            class="flex h-full w-full flex-col items-center justify-center gap-2"
+          >
+            <div class="relative h-[5rem] w-[5rem]">
+              <mtk-icon icon="directbox-send" overrideSize />
+            </div>
+
+            <span class="spaan mt-1 text-sm text-gray-300">{{
+              'IMAGE_UPLOADER.SUPPORTED_FORMATS' | translate
+            }}</span>
+          </div>
+        }
+      </ng-template>
+    </p-fileupload>
+  </div>
+}

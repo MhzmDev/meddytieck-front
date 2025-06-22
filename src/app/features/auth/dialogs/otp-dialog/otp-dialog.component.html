@@ -1,0 +1,46 @@
+<p-dialog [(visible)]="visible" modal closable="false" dismissableMask="false">
+  <form
+    [formGroup]="form"
+    (ngSubmit)="onVerifyOtp()"
+    (keydown.enter)="onVerifyOtp()"
+  >
+    <div class="flex w-[30rem] flex-col gap-7">
+      <p>
+        {{
+          'AUTH.VERIFY_PHONE_MESSAGE'
+            | translate: { phone: phone(), time: timeLeft() }
+        }}
+      </p>
+      <div class="flex justify-center">
+        <p-input-otp
+          mtkNumericInputMode
+          [length]="6"
+          dir="ltr"
+          size="large"
+          formControlName="otp"
+        />
+      </div>
+      @if (!resendDisabled()) {
+        <p>
+          {{ 'AUTH.DID_NOT_RECEIVE_CODE' | translate }}
+          <p-button label="{{ 'AUTH.RESEND' | translate }}" [link]="true" />
+        </p>
+      }
+      <div class="grid w-full grid-cols-2 gap-2">
+        <p-button
+          label="{{ 'AUTH.CONFIRM' | translate }}"
+          styleClass="w-full"
+          type="submit"
+          [loading]="authStore.isAuthPending()"
+        />
+        <p-button
+          label="{{ 'AUTH.CANCEL' | translate }}"
+          styleClass="w-full"
+          outlined
+          severity="secondary"
+          (onClick)="visible.set(false)"
+        />
+      </div>
+    </div>
+  </form>
+</p-dialog>

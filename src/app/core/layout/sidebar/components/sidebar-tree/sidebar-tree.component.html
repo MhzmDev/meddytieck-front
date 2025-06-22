@@ -1,0 +1,13 @@
+<ul class="flex flex-col items-start gap-1">
+  @for (node of nodes(); track node.key) {
+    <mtk-sidebar-node
+      [selectedNode]="selectedNode()"
+      [expandedNodes]="expandedNodes()"
+      [listContainer]="listContainer()"
+      class="w-full"
+      [node]="node"
+      [index]="1"
+      (nodesExpanded)="onExpandNode($event)"
+    />
+  }
+</ul>

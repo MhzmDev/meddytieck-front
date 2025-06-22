@@ -1,0 +1,136 @@
+<p-dialog
+  [(visible)]="visible"
+  modal
+  draggable="false"
+  styleClass="min-w-[30rem]"
+  [header]="
+    (view() ? 'EMPLOYEES.VIEW_EMPLOYEE' : 'EMPLOYEES.EDIT_EMPLOYEE') | translate
+  "
+>
+  <form
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+    class="grid w-full grid-cols-2 gap-4"
+  >
+    @if (view()) {
+      <div class="col-span-1">
+        <mtk-input
+          formControlName="firstNameEn"
+          [label]="'FORMS.FIRST_NAME_EN' | translate"
+          [placeholder]="'FORMS.FIRST_NAME_EN' | translate"
+          [loading]="employeesStore.isGetEmployeePending()"
+        />
+      </div>
+      <div class="col-span-1">
+        <mtk-input
+          formControlName="firstNameAr"
+          [label]="'FORMS.FIRST_NAME_AR' | translate"
+          [placeholder]="'FORMS.FIRST_NAME_AR' | translate"
+          [loading]="employeesStore.isGetEmployeePending()"
+        />
+      </div>
+      <div class="col-span-1">
+        <mtk-input
+          formControlName="lastNameEn"
+          [label]="'FORMS.LAST_NAME_EN' | translate"
+          [placeholder]="'FORMS.LAST_NAME_EN' | translate"
+          [loading]="employeesStore.isGetEmployeePending()"
+        />
+      </div>
+      <div class="col-span-1">
+        <mtk-input
+          formControlName="lastNameAr"
+          [label]="'FORMS.LAST_NAME_AR' | translate"
+          [placeholder]="'FORMS.LAST_NAME_AR' | translate"
+          [loading]="employeesStore.isGetEmployeePending()"
+        />
+      </div>
+    }
+    <div class="col-span-2">
+      <mtk-input
+        formControlName="fullAddress"
+        [label]="'FORMS.FULL_ADDRESS' | translate"
+        [placeholder]="'FORMS.FULL_ADDRESS' | translate"
+        [loading]="employeesStore.isGetEmployeePending()"
+      />
+    </div>
+    @if (view()) {
+      <div class="col-span-2">
+        <mtk-input
+          formControlName="identityNO"
+          [label]="'FORMS.NATIONAL_ID' | translate"
+          [placeholder]="'FORMS.NATIONAL_ID' | translate"
+          [loading]="employeesStore.isGetEmployeePending()"
+        />
+      </div>
+    }
+    <div class="col-span-2">
+      <mtk-input
+        formControlName="email"
+        [label]="'FORMS.EMAIL' | translate"
+        [placeholder]="'FORMS.EMAIL' | translate"
+        [loading]="employeesStore.isGetEmployeePending()"
+      />
+    </div>
+    <div class="col-span-2">
+      <mtk-input
+        formControlName="phoneNumber"
+        [label]="'FORMS.PHONE_NUMBER' | translate"
+        [placeholder]="'FORMS.PHONE_NUMBER' | translate"
+        [loading]="employeesStore.isGetEmployeePending()"
+      />
+    </div>
+    @if (view()) {
+      <div class="col-span-2">
+        <mtk-select
+          [options]="employeesStore.departments()"
+          formControlName="departmentId"
+          optionLabel="name"
+          optionValue="id"
+          [label]="'FORMS.DEPARTMENT' | translate"
+          [placeholder]="'FORMS.DEPARTMENT' | translate"
+          [loading]="employeesStore.isGetEmployeePending()"
+        ></mtk-select>
+      </div>
+    }
+    <div class="col-span-2">
+      <mtk-select
+        [options]="employeesStore.areas()"
+        formControlName="areaId"
+        optionLabel="name"
+        optionValue="id"
+        [label]="'FORMS.AREA' | translate"
+        [placeholder]="'FORMS.AREA' | translate"
+        [loading]="employeesStore.isGetEmployeePending()"
+        appendTo="body"
+      />
+    </div>
+  </form>
+  <ng-template #footer>
+    <div class="grid w-full grid-cols-2 gap-4 pt-4">
+      @if (view()) {
+        <p-button
+          [label]="'BUTTONS.EDIT' | translate"
+          styleClass="w-full"
+          size="large"
+          (onClick)="onEdit()"
+        />
+      } @else {
+        <p-button
+          [label]="'BUTTONS.SAVE' | translate"
+          styleClass="w-full"
+          size="large"
+          [loading]="employeesStore.isUpdateEmployeePending()"
+          (onClick)="onSubmit()"
+        />
+      }
+      <p-button
+        [label]="'BUTTONS.CANCEL' | translate"
+        severity="secondary"
+        styleClass="w-full"
+        size="large"
+        (onClick)="visible.set(false)"
+      />
+    </div>
+  </ng-template>
+</p-dialog>

@@ -1,0 +1,47 @@
+<mtk-table
+  [value]="employeesStore.employees()"
+  [columns]="tableColumns()"
+  [totalRecords]="employeesStore.totalItems()"
+  [rows]="employeesStore.pageSize()"
+  [menuItems]="menuItems"
+  showMenuItems
+  paginator
+  [first]="employeesStore.first()"
+  (pageChange)="employeesStore.setPage($event.first / $event.rows + 1)"
+  [loading]="employeesStore.isEmployeesPending()"
+  #table
+>
+  <ng-template sTemplate="status" let-rowData [contextType]="table.contextType">
+    <p-inputSwitch
+      [ngModel]="rowData.active"
+      (onChange)="onStatusChange(rowData)"
+    />
+  </ng-template>
+</mtk-table>
+@if (showEditViewEmployee()) {
+  <mtk-view-edit-employee
+    [(visible)]="showEditViewEmployee"
+    [id]="selectedId()"
+    [(view)]="viewMode"
+    (success)="showSuccessDialog.set(true)"
+  />
+}
+@if (showEditEmployeesRoles()) {
+  <mtk-edit-employees-permissions
+    [id]="selectedId()"
+    [(visible)]="showEditEmployeesRoles"
+    (success)="showSuccessDialog.set(true)"
+  />
+}
+@if (showConfirmDeleteUser()) {
+  <mtk-confirmation-dialog
+    title="EMPLOYEES.DELETE_EMPLOYEE"
+    subtitle="EMPLOYEES.DELETE_EMPLOYEE_SUBTITLE"
+    [(visible)]="showConfirmDeleteUser"
+    [confirmButtonLoading]="confirmDeleteUserLoading()"
+    (confirm)="onConfirmDeleteUser()"
+  />
+}
+@if (showSuccessDialog()) {
+  <mtk-success-dialog [(visible)]="showSuccessDialog" />
+}
