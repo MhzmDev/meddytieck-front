@@ -1,0 +1,33 @@
+<p-dialog
+  [(visible)]="visible"
+  [header]="'AREAS.ADD_NEW_AREA' | translate"
+  [modal]="true"
+  [style]="{ width: '500px' }"
+  [draggable]="false"
+  [resizable]="false"
+>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="flex flex-col gap-5">
+    <mtk-input
+      [label]="'AREAS.AREA_NAME_AR' | translate"
+      formControlName="nameAr"
+      [required]="true"
+    />
+    <mtk-input
+      [label]="'AREAS.AREA_NAME_EN' | translate"
+      formControlName="nameEn"
+      [required]="true"
+    />
+    <div class="flex justify-end gap-2">
+      <p-button
+        [label]="'BUTTONS.CANCEL' | translate"
+        severity="secondary"
+        (onClick)="visible.set(false)"
+      ></p-button>
+      <p-button
+        [label]="'BUTTONS.SAVE' | translate"
+        [loading]="areasStore.isCreateAreaPending()"
+        type="submit"
+      ></p-button>
+    </div>
+  </form>
+</p-dialog>

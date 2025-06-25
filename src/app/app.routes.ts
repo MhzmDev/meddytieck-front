@@ -94,6 +94,15 @@ export const routes: Routes = [
           title: 'EMPLOYEES.TITLE',
         },
       },
+      {
+        path: 'areas',
+        loadChildren: () =>
+          import('./features/areas/areas.route').then((m) => m.route),
+        data: {
+          pageTitle: 'SIDEBAR.AREAS',
+          title: 'AREAS.TITLE',
+        },
+      },
       // {
       //   path: 'inspection-department',
       //   loadChildren: () =>

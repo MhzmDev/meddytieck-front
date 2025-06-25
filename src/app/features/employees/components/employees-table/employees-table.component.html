@@ -1,5 +1,5 @@
 <mtk-table
-  [value]="employeesStore.employees()"
+  [value]="employeesStore.employees() ?? []"
   [columns]="tableColumns()"
   [totalRecords]="employeesStore.totalItems()"
   [rows]="employeesStore.pageSize()"

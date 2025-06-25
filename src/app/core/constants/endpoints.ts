@@ -19,9 +19,13 @@ export const Endpoints = {
 
   // Areas
   getAreas: `${baseUrl}/api/Area`,
+  getAreaById: `${baseUrl}/api/Area`,
+  createArea: `${baseUrl}/api/Area`,
+  updateArea: `${baseUrl}/api/Area`,
+  deleteArea: `${baseUrl}/api/Area`,
 
   // Departments
-  getDepartments: `${baseUrl}/api/Department`,
+  getDepartments: `${baseUrl}/api/UserAccount/GetAllDepartments`,
 
   // Categories
   getCategories: `${baseUrl}/api/Category`,

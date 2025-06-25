@@ -13,15 +13,6 @@
     "WELCOME": "مرحباً بك",
     "PLEASE_LOGIN": "يرجى تسجيل الدخول للمتابعة"
   },
-  "BANNER_MANAGEMENT": {
-    "TITLE": "إدارة البانرات"
-  },
-  "BILL_OF_LADING": {
-    "TITLE": "بوليصة الشحن"
-  },
-  "BUNDLES": {
-    "TITLE": "الباقات"
-  },
   "BUTTONS": {
     "ADD": "اضافة",
     "CANCEL": "الغاء",
@@ -35,9 +26,6 @@
   "IMAGE_UPLOADER": {
     "SUPPORTED_FORMATS": "يدعم: JPG, JPEG, PNG"
   },
-  "CLIENTS": {
-    "TITLE": "العملاء"
-  },
   "COMMON": {
     "ACTIVE": "نشط",
     "ADD_NEW_ATTRIBUTE": "اضافة سمة جديدة",
@@ -49,56 +37,6 @@
     "SEARCH": "البحث",
     "ALL": "الجميع",
     "TOTAL_ITEMS": "إجمالي العناصر"
-  },
-  "CUSTOMER_SERVICE": {
-    "COMPLAINTS_TITLE": "الشكاوي",
-    "SUGGESTION_TITLE": "المقترحات",
-    "TITLE": "خدمة العملاء"
-  },
-  "ATTRIBUTE": {
-    "ADD_TITLE": "إضافة سمة جديدة",
-    "EDIT_TITLE": "تعديل السمة",
-    "NAME_AR": "السمة باللغة العربية",
-    "NAME_EN": "السمة باللغة الإنجليزية"
-  },
-  "ATTRIBUTE_VALUE": {
-    "ADD_TITLE": "إضافة قيمة جديدة",
-    "EDIT_TITLE": "تعديل قيمة السمة",
-    "NAME_AR": "القيمة باللغة العربية",
-    "NAME_EN": "القيمة باللغة الإنجليزية"
-  },
-  "DEPARTMENTS": {
-    "ATTRIBUTES": "السمات",
-    "BRANDS": "الماركات",
-    "BRAND_NAME": "اسم الماركة",
-    "BRAND_NAME_AR": "اسم الماركة بالعربية",
-    "BRAND_NAME_EN": "اسم الماركة بالانجليزية",
-    "CATEGORIES": "الاقسام",
-    "CATEGORY_NAME": "اسم القسم",
-    "CATEGORY_NAME_AR": "اسم القسم بالعربية",
-    "CATEGORY_NAME_EN": "اسم القسم بالانجليزية",
-    "CREATE_BRAND": "اضافة ماركة جديدة",
-    "CREATE_CATEGORY": "اضافة قسم جديد",
-    "CREATE_MODEL": "اضافة موديل جديد",
-    "CREATE_PRODUCT": "اضافة منتج جديد",
-    "MODELS": "الموديلات",
-    "MODEL_ATTRIBUTES": "السمات",
-    "MODEL_ATTRIBUTES_MANAGEMENT": "إدارة السمات",
-    "MODEL_NAME": "اسم الموديل",
-    "MODEL_NAME_AR": "اسم الموديل بالعربية",
-    "MODEL_NAME_EN": "اسم الموديل بالانجليزية",
-    "PRODUCTS": "المنتجات",
-    "PRODUCT_NAME": "اسم المنتج",
-    "PRODUCT_NAME_AR": "اسم المنتج بالعربية",
-    "PRODUCT_NAME_EN": "اسم المنتج بالانجليزية",
-    "TITLE": "الاقسام",
-    "NEW_ATTRIBUTE": "سمة جديدة",
-    "ATTRIBUTE_VALUES": "القيم",
-    "NEW_VALUE": "قيمة جديدة",
-    "EDIT_QUANTITY_TITLE": "تعديل كمية المنتج",
-    "EDIT_QUANTITY_SUBTITLE": "حدد نوع التعديل على الكمية",
-    "QUANTITY": "الكمية",
-    "QUANTITY_PLACEHOLDER": "أدخل عدد القطع المراد إضافتها أو سحبها من المخزون"
   },
   "DIALOG": {
     "BACK": "تراجع",
@@ -121,6 +59,20 @@
     "VIEW_EMPLOYEE": "عرض تفاصيل الموظف",
     "DELETE_EMPLOYEE": "أنت على وشك حذف بيانات موظف",
     "DELETE_EMPLOYEE_SUBTITLE": "هل أنت متأكد من هذا القرار؟"
+  },
+  "AREAS": {
+    "AREA_NAME_AR": "اسم المنطقة بالعربية",
+    "AREA_NAME_EN": "اسم المنطقة بالانجليزية",
+    "AREA_NAME": "اسم المنطقة",
+    "AREAS_LIST": "قائمة المناطق",
+    "AREAS_MANAGEMENT": "إدارة وتحديث بيانات المناطق",
+    "TITLE": "المناطق",
+    "ADD_NEW_AREA": "اضافة منطقة جديدة",
+    "CREATE_AREA": "إنشاء منطقة جديدة",
+    "VIEW_AREA": "عرض تفاصيل المنطقة",
+    "EDIT_AREA": "تعديل تفاصيل المنطقة",
+    "DELETE_AREA": "أنت على وشك حذف بيانات منطقة",
+    "DELETE_AREA_SUBTITLE": "هل أنت متأكد من هذا القرار؟"
   },
   "FORMS": {
     "AREA": "المنطقة",
@@ -151,11 +103,6 @@
     "PLACEHOLDER_QUANTITY": "اكتب هنا الكمية",
     "PLACEHOLDER_SERIAL": "اكتب هنا الرقم التسلسلي"
   },
-  "INSPECTION_DEPARTMENT": {
-    "ANNOUNCEMENTS_TITLE": "الإعلانات",
-    "PRODUCTS_TITLE": "المنتجات",
-    "TITLE": "قسم الفحص"
-  },
   "MENU": {
     "ABOUT": "من نحن",
     "CONTACT": "اتصل بنا",
@@ -170,11 +117,6 @@
     "EDIT": "تعديل",
     "PERMISSIONS": "الصلاحيات",
     "SHOW": "عرض"
-  },
-  "MERCHANTS": {
-    "TITLE": "التجار",
-    "MERCHANTS_LIST": "قائمة التجار",
-    "MERCHANTS_MANAGEMENT": "إدارة وتحديث حالات التجار"
   },
   "NOTIFICATIONS": {
     "TITLE": "الاشعارات"
@@ -191,28 +133,6 @@
     "SEARCH_BY_PHONE_NO": "رقم الهاتف",
     "STATUS": "الحالة",
     "MEMBERSHIP": "العضوية"
-  },
-  "SEDA_PRODUCTS": {
-    "TITLE": "منتجات صيده",
-    "LIST_TITLE": "قائمة منتجات صيده",
-    "LIST_SUBTITLE": "إدارة وعرض جميع منتجات صيده",
-    "ADD_NEW_BUTTON": "إضافة منتج جديد",
-    "SEARCH": "البحث",
-    "SEARCH_BY": "البحث بواسطة",
-    "CREATE_PRODUCT_TITLE": "إضافة منتج جديد",
-    "IMAGE": "صورة المنتج",
-    "NAME": "اسم المنتج",
-    "PRICE": "السعر",
-    "QUANTITY": "الكمية",
-    "SERIAL": "الرقم التسلسلي",
-    "EDIT": "تعديل",
-    "DELETE": "حذف"
-  },
-  "SETTINGS": {
-    "TITLE": "الاعدادات"
-  },
-  "SETTLEMENT_REQUESTS": {
-    "TITLE": "طلبات التسوية"
   },
   "SIDEBAR": {
     "EMPLOYEES": "الموظفين",
@@ -456,36 +376,5 @@
       "zoomIn": "تكبير",
       "zoomOut": "تصغير"
     }
-  },
-  "MERCHANT_DETAILS_TABS": {
-    "STORE_INFO": "بيانات المتجر",
-    "ORDERS": "الطلبات",
-    "SETTLEMENT_REQUESTS": "طلبات التسوية",
-    "ANNOUNCEMENTS": "الإعلانات",
-    "COMPLAINTS": "الشكاوي",
-    "SUGGESTIONS": "المقترحات"
-  },
-  "MERCHANT_DETAILS": {
-    "TITLE": "بيانات التاجر",
-    "STORE_NAME": "اسم المتجر",
-    "PHONE_NUMBER": "رقم الهاتف",
-    "ADDRESS": "العنوان",
-    "MEMBERSHIP": "العضوية",
-    "WALLET": "المحفظة"
-  },
-  "SETTLEMENT_TABLE": {
-    "INVOICE": "الفاتورة",
-    "ORDER_NUMBER": "رقم الطلب",
-    "PURCHASE_DATE": "تاريخ الشراء",
-    "CUSTOMER_NAME": "اسم العميل",
-    "ORDER_VALUE": "قيمة الطلب",
-    "COMMISSION_PERCENT": "نسبة صيدهـ",
-    "REMAINING": "المتبقي",
-    "STATUS": "الحالة",
-    "ACTIONS": "الإجراءات",
-    "SETTLED": "تمت التسوية",
-    "REQUESTED": "طلب تسوية",
-    "NOT_REQUESTED": "لم يتم الطلب",
-    "REQUEST_SETTLEMENT": "طلب تسوية"
   }
 }

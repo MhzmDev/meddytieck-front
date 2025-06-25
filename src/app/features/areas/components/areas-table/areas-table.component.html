@@ -1,0 +1,30 @@
+<div class="flex flex-col gap-4">
+  <mtk-table
+    [value]="areasStore.areas() ?? []"
+    [columns]="tableColumns()"
+    [menuItems]="menuItems()"
+    [loading]="areasStore.isAreasPending()"
+    [totalRecords]="totalRecords()"
+    [rows]="10"
+    [paginator]="true"
+    [showMenuItems]="true"
+    (pageChange)="onPageChange($event)"
+  />
+</div>
+
+@if (showEditArea()) {
+  <mtk-edit-area
+    [(visible)]="showEditArea"
+    [areaId]="selectedId()"
+  />
+}
+
+@if (showConfirmDeleteArea()) {
+  <mtk-confirmation-dialog
+    [(visible)]="showConfirmDeleteArea"
+    [title]="'AREAS.DELETE_AREA' | translate"
+    [subtitle]="'AREAS.DELETE_AREA_SUBTITLE' | translate"
+    [confirmButtonLoading]="confirmDeleteAreaLoading()"
+    (confirm)="onConfirmDeleteArea()"
+  />
+}

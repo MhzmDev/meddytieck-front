@@ -58,10 +58,17 @@ export class IconComponent {
 
   private setIcon(icon: string) {
     const url = `./icons/${icon}.svg`;
+    console.log(`Attempting to load icon: ${icon} from URL: ${url}`);
 
-    this.getSanitizedSvgFromUrl(url).subscribe((svgElement) => {
-      this.elementRef.nativeElement.appendChild(svgElement);
-    });
+    this.getSanitizedSvgFromUrl(url).subscribe(
+      (svgElement) => {
+        console.log(`Successfully loaded icon: ${icon}`);
+        this.elementRef.nativeElement.appendChild(svgElement);
+      },
+      (error) => {
+        console.error(`Failed to load icon: ${icon}`, error);
+      }
+    );
   }
 
   private getSanitizedSvgFromUrl(url: string) {
@@ -83,7 +90,7 @@ export class IconComponent {
         this.overrideColor() ? this.overrideSvgColor(svgEl) : svgEl,
       ),
       catchError((error) => {
-        console.error(error);
+        console.error(`Error loading SVG from URL: ${url}`, error);
         return EMPTY;
       }),
     );

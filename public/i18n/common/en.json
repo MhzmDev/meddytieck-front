@@ -140,96 +140,19 @@
     "DELETE_EMPLOYEE": "You are about to delete employee data",
     "DELETE_EMPLOYEE_SUBTITLE": "Are you sure you want to proceed?"
   },
-  "CLIENTS": {
-    "TITLE": "Clients"
-  },
-  "MERCHANTS": {
-    "TITLE": "Merchants",
-    "MERCHANTS_LIST": "Merchants List",
-    "MERCHANTS_MANAGEMENT": "Manage and Update Merchant Status"
-  },
-  "SETTLEMENT_REQUESTS": {
-    "TITLE": "Settlement Requests"
-  },
-  "BILL_OF_LADING": {
-    "TITLE": "Bill of Lading"
-  },
-  "CUSTOMER_SERVICE": {
-    "TITLE": "Customer Service",
-    "COMPLAINTS_TITLE": "Complaints",
-    "SUGGESTION_TITLE": "Suggestions"
-  },
-  "INSPECTION_DEPARTMENT": {
-    "TITLE": "Inspection Department",
-    "ANNOUNCEMENTS_TITLE": "Announcements",
-    "PRODUCTS_TITLE": "Products"
-  },
-  "DEPARTMENTS": {
-    "TITLE": "Categories",
-    "CATEGORIES": "Categories",
-    "MODELS": "Models",
-    "PRODUCTS": "Products",
-    "CREATE_CATEGORY": "Add New Category",
-    "CREATE_MODEL": "Add New Model",
-    "CREATE_PRODUCT": "Add New Product",
-    "CATEGORY_NAME": "Category Name",
-    "MODEL_NAME": "Model Name",
-    "PRODUCT_NAME": "Product Name",
-    "CATEGORY_NAME_EN": "Category Name in English",
-    "CATEGORY_NAME_AR": "Category Name in Arabic",
-    "MODEL_NAME_EN": "Model Name in English",
-    "MODEL_NAME_AR": "Model Name in Arabic",
-    "PRODUCT_NAME_EN": "Product Name in English",
-    "PRODUCT_NAME_AR": "Product Name in Arabic",
-    "ATTRIBUTES": "Attributes",
-    "MODEL_ATTRIBUTES_MANAGEMENT": "Attributes Management",
-    "BRANDS": "Brands",
-    "CREATE_BRAND": "Add New Brand",
-    "BRAND_NAME": "Brand Name",
-    "BRAND_NAME_EN": "Brand Name in English",
-    "BRAND_NAME_AR": "Brand Name in Arabic",
-    "MODEL_ATTRIBUTES": "Attributes",
-    "NEW_ATTRIBUTE": "New Attribute",
-    "ATTRIBUTE_VALUES": "Attribute Values",
-    "NEW_VALUE": "New Value",
-    "EDIT_QUANTITY_TITLE": "Edit Product Quantity",
-    "EDIT_QUANTITY_SUBTITLE": "Select the type of quantity modification",
-    "QUANTITY": "Quantity",
-    "QUANTITY_PLACEHOLDER": "Enter the number of items to add or withdraw from inventory"
-  },
-  "ATTRIBUTE": {
-    "ADD_TITLE": "Add New Attribute",
-    "EDIT_TITLE": "Edit Attribute",
-    "NAME": "Attribute Name",
-    "NAME_AR": "Attribute in Arabic",
-    "NAME_EN": "Attribute in English"
-  },
-  "ATTRIBUTE_VALUE": {
-    "ADD_TITLE": "Add Attribute Value",
-    "EDIT_TITLE": "Edit Attribute Value",
-    "NAME": "Value Name",
-    "NAME_AR": "Value in Arabic",
-    "NAME_EN": "Value in English"
-  },
-  "SEDA_PRODUCTS": {
-    "TITLE": "SEDA Products",
-    "LIST_TITLE": "SEDA Products List",
-    "LIST_SUBTITLE": "Manage and view all SEDA products",
-    "ADD_NEW_BUTTON": "Add New Product",
-    "SEARCH": "Search",
-    "SEARCH_BY": "Search By",
-    "CREATE_PRODUCT_TITLE": "Add New Product",
-    "IMAGE": "Product Image",
-    "NAME": "Product Name",
-    "PRICE": "Price",
-    "QUANTITY": "Quantity",
-    "SERIAL": "Serial Number",
-    "ACTIONS": "Actions",
-    "EDIT": "Edit",
-    "DELETE": "Delete"
-  },
-  "BANNER_MANAGEMENT": {
-    "TITLE": "Banner Management"
+  "AREAS": {
+    "AREA_NAME_AR": "Area Name in Arabic",
+    "AREA_NAME_EN": "Area Name in English",
+    "TITLE": "Areas",
+    "AREA_NAME": "Area Name",
+    "AREAS_LIST": "Areas List",
+    "AREAS_MANAGEMENT": "Manage and Update Area Data",
+    "ADD_NEW_AREA": "Add New Area",
+    "CREATE_AREA": "Create New Area",
+    "VIEW_AREA": "View Area Details",
+    "EDIT_AREA": "Edit Area Details",
+    "DELETE_AREA": "You are about to delete area data",
+    "DELETE_AREA_SUBTITLE": "Are you sure you want to proceed?"
   },
   "NOTIFICATIONS": {
     "TITLE": "Notifications"
@@ -445,36 +368,5 @@
       "zoomIn": "Zoom In",
       "zoomOut": "Zoom Out"
     }
-  },
-  "MERCHANT_DETAILS_TABS": {
-    "STORE_INFO": "Store Info",
-    "ORDERS": "Orders",
-    "SETTLEMENT_REQUESTS": "Settlement Requests",
-    "ANNOUNCEMENTS": "Announcements",
-    "COMPLAINTS": "Complaints",
-    "SUGGESTIONS": "Suggestions"
-  },
-  "MERCHANT_DETAILS": {
-    "TITLE": "Merchant Details",
-    "STORE_NAME": "Store Name",
-    "PHONE_NUMBER": "Phone Number",
-    "ADDRESS": "Address",
-    "MEMBERSHIP": "Membership",
-    "WALLET": "Wallet"
-  },
-  "SETTLEMENT_TABLE": {
-    "INVOICE": "Invoice",
-    "ORDER_NUMBER": "Order Number",
-    "PURCHASE_DATE": "Purchase Date",
-    "CUSTOMER_NAME": "Customer Name",
-    "ORDER_VALUE": "Order Value",
-    "COMMISSION_PERCENT": "Commission %",
-    "REMAINING": "Remaining",
-    "STATUS": "Status",
-    "ACTIONS": "Actions",
-    "SETTLED": "Settled",
-    "REQUESTED": "Settlement Requested",
-    "NOT_REQUESTED": "Not Requested",
-    "REQUEST_SETTLEMENT": "Request Settlement"
   }
 }
