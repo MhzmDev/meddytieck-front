@@ -58,15 +58,11 @@ export class IconComponent {
 
   private setIcon(icon: string) {
     const url = `./icons/${icon}.svg`;
-    console.log(`Attempting to load icon: ${icon} from URL: ${url}`);
-
     this.getSanitizedSvgFromUrl(url).subscribe(
       (svgElement) => {
-        console.log(`Successfully loaded icon: ${icon}`);
         this.elementRef.nativeElement.appendChild(svgElement);
       },
       (error) => {
-        console.error(`Failed to load icon: ${icon}`, error);
       }
     );
   }
