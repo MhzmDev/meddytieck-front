@@ -22,17 +22,17 @@ export const routes: Routes = [
         redirectTo: 'employees',
         pathMatch: 'full',
       },
-      // {
-      //   path: 'banner-management',
-      //   loadChildren: () =>
-      //     import('./features/banner-management/banner-management.route').then(
-      //       (m) => m.route,
-      //     ),
-      //   data: {
-      //     pageTitle: 'SIDEBAR.BANNER_MANAGEMENT',
-      //     title: 'BANNER_MANAGEMENT.TITLE',
-      //   },
-      // },
+      {
+        path: 'purchase',
+        loadChildren: () =>
+          import('./features/purchases/purchases.route').then(
+            (m) => m.PURCHASES_ROUTES,
+          ),
+        data: {
+          pageTitle: 'SIDEBAR.PURCHASE',
+          title: 'PURCHASE.TITLE',
+        },
+      },
       // {
       //   path: 'bill-of-lading',
       //   loadChildren: () =>

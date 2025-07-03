@@ -33,17 +33,17 @@ export class SidebarComponent {
         {
           key: 'suppliers',
           label: 'SIDEBAR.SUPPLIERS',
-          route: 'suppliers',
+          route: 'purchase/suppliers',
         },
         {
           key: 'brands',
           label: 'SIDEBAR.BRANDS',
-          route: 'brands',
+          route: 'purchase/brands',
         },
         {
           key: 'inventory',
           label: 'SIDEBAR.INVENTORY',
-          route: 'inventory',
+          route: 'purchases/inventory',
         },
       ],
     },

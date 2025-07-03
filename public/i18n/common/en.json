@@ -154,6 +154,31 @@
     "DELETE_AREA": "You are about to delete area data",
     "DELETE_AREA_SUBTITLE": "Are you sure you want to proceed?"
   },
+  "SUPPLIERS": {
+    "TITLE": "Suppliers",
+    "NAME": "Supplier Name",
+    "NAME_EN": "Supplier Name in English",
+    "NAME_AR": "Supplier Name in Arabic",
+    "ADDRESS": "Address",
+    "PHONE_NUMBER": "Phone Number",
+    "SUPPLIERS_LIST": "Suppliers List",
+    "SUPPLIERS_MANAGEMENT": "Manage and Update Supplier Data",
+    "ADD_NEW_SUPPLIER": "Add New Supplier",
+    "EDIT_SUPPLIER": "Edit Supplier",
+    "DELETE_SUPPLIER_TITLE": "Delete Supplier",
+    "DELETE_SUPPLIER_MESSAGE": "Are you sure you want to delete this supplier?",
+    "ENTER_NAME_EN": "Enter supplier name in English",
+    "ENTER_NAME_AR": "Enter supplier name in Arabic",
+    "ENTER_PHONE_NUMBER": "Enter phone number",
+    "ENTER_ADDRESS": "Enter phone number",
+    "CREATE_SUCCESS": "Supplier created successfully",
+    "UPDATE_SUCCESS": "Supplier updated successfully",
+    "DELETE_SUCCESS": "Supplier deleted successfully",
+    "LOAD_ERROR": "Failed to load suppliers",
+    "CREATE_ERROR": "Failed to create supplier",
+    "UPDATE_ERROR": "Failed to update supplier",
+    "DELETE_ERROR": "Failed to delete supplier"
+  },
   "NOTIFICATIONS": {
     "TITLE": "Notifications"
   },
@@ -167,6 +192,8 @@
     "FIRST_NAME_EN": "First Name in English",
     "FIRST_NAME_AR": "First Name in Arabic",
     "LAST_NAME_EN": "Last Name in English",
+    "MID_NAME_EN": "Mid Name in English",
+    "MID_NAME_AR": "Mid Name in Arabic",
     "LAST_NAME_AR": "Last Name in Arabic",
     "FULL_ADDRESS": "Full Address",
     "NATIONAL_ID": "National ID",
@@ -190,7 +217,8 @@
     "PLACEHOLDER_DESCRIPTION_EN": "Product Description in English",
     "PLACEHOLDER_PRICE": "Write price here",
     "PLACEHOLDER_QUANTITY": "Write quantity here",
-    "PLACEHOLDER_SERIAL": "Write Serial Number here"
+    "PLACEHOLDER_SERIAL": "Write Serial Number here",
+    "PASSWORD": "Write Password here"
   },
   "DIALOG": {
     "CONFIRM": "Confirm",

@@ -1,6 +1,7 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  computed,
   inject,
   model,
   output,
@@ -39,12 +40,25 @@ export class CreateEmployeeComponent {
 
   readonly employeesStore = inject(EmployeesStore);
   private fb = inject(NonNullableFormBuilder);
+  
+  // Filter out department with ID 1 (administration)
+  readonly filteredDepartments = computed(() => {
+    return this.employeesStore.departments().filter(dept => dept.id !== 1);
+  });
   readonly form = this.fb.group({
     firstNameEn: this.fb.control('', [
       Validators.required,
       CustomValidatorsService.isEnglish,
     ]),
     firstNameAr: this.fb.control('', [
+      Validators.required,
+      CustomValidatorsService.isArabic,
+    ]),
+    midNameEn: this.fb.control('', [
+      Validators.required,
+      CustomValidatorsService.isEnglish,
+    ]),
+    midNameAr: this.fb.control('', [
       Validators.required,
       CustomValidatorsService.isArabic,
     ]),
@@ -58,6 +72,7 @@ export class CreateEmployeeComponent {
     ]),
     fullAddress: this.fb.control('', [Validators.required]),
     identityNO: this.fb.control('', [Validators.required]),
+    password: this.fb.control('', [Validators.required]),
     userName: this.fb.control('', []), //
     email: this.fb.control('', [
       Validators.required,
@@ -80,9 +95,9 @@ export class CreateEmployeeComponent {
     await this.employeesStore.addEmployee({
       ...this.form.getRawValue(),
       displayName: `${this.form.getRawValue().firstNameEn} ${
-        this.form.getRawValue().lastNameEn
+        this.form.getRawValue().midNameEn
       }`,
-      userName: `${this.form.getRawValue().firstNameEn}:${Date.now()}`,
+      userName: `${this.form.getRawValue().firstNameEn}_${this.form.getRawValue().lastNameEn}`,
     });
     if (this.employeesStore.isCreateEmployeeFulfilled()) {
       this.visible.set(false);

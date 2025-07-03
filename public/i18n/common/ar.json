@@ -82,6 +82,8 @@
     "FIRST_NAME_EN": "الاسم الأول باللغة الإنجليزية",
     "FULL_ADDRESS": "العنوان الكامل",
     "LAST_NAME_AR": "الاسم الأخير باللغة العربية",
+    "MID_NAME_AR": "الاسم الأوسط باللغة العربية",
+    "MID_NAME_EN": "الاسم الأوسط باللغة الإنجليزية",
     "LAST_NAME_EN": "الاسم الأخير باللغة الإنجليزية",
     "NATIONAL_ID": "رقم الهوية",
     "PHONE_NUMBER": "رقم الهاتف",
@@ -101,7 +103,8 @@
     "PLACEHOLDER_DESCRIPTION_EN": "وصف المنتج باللغة الإنجليزية",
     "PLACEHOLDER_PRICE": "اكتب هنا السعر",
     "PLACEHOLDER_QUANTITY": "اكتب هنا الكمية",
-    "PLACEHOLDER_SERIAL": "اكتب هنا الرقم التسلسلي"
+    "PLACEHOLDER_SERIAL": "اكتب هنا الرقم التسلسلي",
+    "PASSWORD": "اكتب هنا الرقم التسلسلي"
   },
   "MENU": {
     "ABOUT": "من نحن",
@@ -146,6 +149,32 @@
     "CLIENTS": "العملاء",
     "VISITS": "الزيارات",
     "CHECK_LIST": "شيك ليست"
+  },
+
+  "SUPPLIERS": {
+    "TITLE": "الموردين",
+    "NAME": "اسم المورد",
+    "NAME_EN": "اسم المورد باللغة الإنجليزية",
+    "NAME_AR": "اسم المورد باللغة العربية",
+    "ADDRESS": "العنوان",
+    "PHONE_NUMBER": "رقم الهاتف",
+    "SUPPLIERS_LIST": "قائمة الموردين",
+    "SUPPLIERS_MANAGEMENT": "إدارة وتحديث بيانات الموردين",
+    "ADD_NEW_SUPPLIER": "إضافة مورد جديد",
+    "EDIT_SUPPLIER": "تعديل تفاصيل المورد",
+    "DELETE_SUPPLIER_TITLE": "حذف مورد",
+    "DELETE_SUPPLIER_MESSAGE": "هل أنت متأكد من هذا القرار؟",
+    "ENTER_NAME_EN": "أدخل اسم المورد باللغة الإنجليزية",
+    "ENTER_NAME_AR": "أدخل اسم المورد باللغة العربية",
+    "ENTER_PHONE_NUMBER": "أدخل رقم الهاتف",
+    "ENTER_ADDRESS": "أدخل العنوان",
+    "CREATE_SUCCESS": "تم إضافة المورد بنجاح",
+    "UPDATE_SUCCESS": "تم تحديث المورد بنجاح",
+    "DELETE_SUCCESS": "تم حذف المورد بنجاح",
+    "LOAD_ERROR": "فشل في تحميل الموردين",
+    "CREATE_ERROR": "فشل في إضافة المورد",
+    "UPDATE_ERROR": "فشل في تحديث المورد",
+    "DELETE_ERROR": "فشل في حذف المورد"
   },
   "TABLE": {
     "ADDRESS": "العنوان",

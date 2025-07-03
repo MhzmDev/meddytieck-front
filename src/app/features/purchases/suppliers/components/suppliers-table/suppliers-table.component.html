@@ -1,0 +1,36 @@
+<div class="flex flex-col gap-4">
+  <mtk-table
+    [value]="suppliersStore.suppliers()"
+    [columns]="tableColumns()"
+    [menuItems]="menuItems()"
+    [loading]="suppliersStore.isSuppliersPending()"
+    [totalRecords]="suppliersStore.totalItems()"
+    [rows]="10"
+    [paginator]="true"
+    [showMenuItems]="true"
+    (pageChange)="onPageChange($event)"
+    (rowSelect)="onRowSelect($event)"
+  />
+</div>
+
+@if (showEditSupplier()) {
+  <mtk-edit-supplier
+    [(visible)]="showEditSupplier"
+    [supplierId]="selectedId()"
+    (success)="showSuccessDialog.set(true)"
+  />
+}
+
+@if (showConfirmDeleteSupplier()) {
+  <mtk-confirmation-dialog
+    [(visible)]="showConfirmDeleteSupplier"
+    [title]="'SUPPLIERS.DELETE_SUPPLIER_TITLE' | translate"
+    [subtitle]="'SUPPLIERS.DELETE_SUPPLIER_MESSAGE' | translate"
+    [confirmButtonLoading]="confirmDeleteSupplierLoading()"
+    (confirm)="onConfirmDeleteSupplier()"
+  />
+}
+
+@if (showSuccessDialog()) {
+  <mtk-success-dialog [(visible)]="showSuccessDialog" />
+}

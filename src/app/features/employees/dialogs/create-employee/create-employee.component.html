@@ -25,6 +25,20 @@
     </div>
     <div class="col-span-1">
       <mtk-input
+        formControlName="midNameEn"
+        [label]="'FORMS.MID_NAME_EN' | translate"
+        [placeholder]="'FORMS.MID_NAME_EN' | translate"
+      />
+    </div>
+    <div class="col-span-1">
+      <mtk-input
+        formControlName="midNameAr"
+        [label]="'FORMS.MID_NAME_AR' | translate"
+        [placeholder]="'FORMS.MID_NAME_AR' | translate"
+      />
+    </div>
+    <div class="col-span-1">
+      <mtk-input
         formControlName="lastNameEn"
         [label]="'FORMS.LAST_NAME_EN' | translate"
         [placeholder]="'FORMS.LAST_NAME_EN' | translate"
@@ -44,6 +58,7 @@
         [placeholder]="'FORMS.FULL_ADDRESS' | translate"
       />
     </div>
+
     <div class="col-span-2">
       <mtk-input
         formControlName="identityNO"
@@ -53,6 +68,7 @@
     </div>
     <div class="col-span-2">
       <mtk-input
+        type="email"
         formControlName="email"
         [label]="'FORMS.EMAIL' | translate"
         [placeholder]="'FORMS.EMAIL' | translate"
@@ -66,8 +82,17 @@
       />
     </div>
     <div class="col-span-2">
+      <mtk-input
+        [fullWidth]="true"
+        type="password"
+        formControlName="password"
+        [label]="'FORMS.PASSWORD' | translate"
+        [placeholder]="'FORMS.PASSWORD' | translate"
+      />
+    </div>
+    <div class="col-span-2">
       <mtk-select
-        [options]="employeesStore.departments()"
+        [options]="filteredDepartments()"
         formControlName="departmentId"
         optionLabel="name"
         optionValue="id"

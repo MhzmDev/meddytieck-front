@@ -27,39 +27,11 @@ export const Endpoints = {
   // Departments
   getDepartments: `${baseUrl}/api/UserAccount/GetAllDepartments`,
 
-  // Categories
-  getCategories: `${baseUrl}/api/Category`,
-  addCategory: `${baseUrl}/api/Category`,
-  updateCategory: `${baseUrl}/api/Category`,
-  getCategoryById: (id: number) => `${baseUrl}/api/Category/${id}`,
-  deleteCategory: (id: number) => `${baseUrl}/api/Category/${id}`,
+  // Suppliers
+  getSuppliers: `${baseUrl}/api/Vendor/GetAllVendors`,
+  getSupplierById: `${baseUrl}/api/Vendor/GetVendorById`,
+  addSupplier: `${baseUrl}/api/Vendor/CreateVendor`,
 
-  // Category Attributes
-  getCategoryAttributes: `${baseUrl}/api/CategoryAttributeDefination`,
-  addCategoryAttribute: `${baseUrl}/api/CategoryAttributeDefination`,
-  updateCategoryAttribute: `${baseUrl}/api/CategoryAttributeDefination`,
-  deleteCategoryAttribute: (id: number) =>
-    `${baseUrl}/api/CategoryAttributeDefination/${id}`,
-
-  // Category Attribute Values
-  getCategoryAttributeValues: `${baseUrl}/api/CategoryAttributeValueSetup`,
-  addCategoryAttributeValue: `${baseUrl}/api/CategoryAttributeValueSetup`,
-  updateCategoryAttributeValue: `${baseUrl}/api/CategoryAttributeValueSetup`,
-  deleteCategoryAttributeValue: (id: number) =>
-    `${baseUrl}/api/CategoryAttributeValueSetup/${id}`,
-
-  // Seda Products
-  addSedaProduct: `${baseUrl}/api/SystemProduct/AddSystemProduct`,
-  updateSedaProduct: `${baseUrl}/api/SystemProduct/UpdateSystemProduct`,
-  deleteSedaProduct: `${baseUrl}/api/SystemProduct`,
-  getSedaProducts: `${baseUrl}/api/SystemProduct`,
-  getSedaProductById: (id: number | string) =>
-    `${baseUrl}/api/SystemProduct/${id}`,
-  changeProductQuantity: `${baseUrl}/api/SystemProduct/ChangeQty`,
-
-  // Merchants
-  getMerchants: `${baseUrl}/api/UsersAccount/GetMerchants`,
-
-  // Quotas
-  getAllQuotas: `${baseUrl}/api/SysQuota/GetAllQuotas`,
+  updateSupplier: `${baseUrl}/api/Vendor/UpdateVendor`,
+  deleteSupplier: `${baseUrl}/api/Vendor/DeleteVendor`,
 } as const;

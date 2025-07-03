@@ -12,10 +12,8 @@ export interface Employee {
   email: string;
   firstNameAr: string;
   midNameAr: string;
-  lastNameAr: string;
   firstNameEn: string;
   midNameEn: string;
-  lastNameEn: string;
   displayNameAr: string;
   displayNameEn: string;
   fullAddress: string;
@@ -53,10 +51,10 @@ interface Area {
 export interface CreateEmployeePayload {
   firstNameAr: string;
   midNameAr?: string;
-  lastNameAr: string;
+  lastNameAr?: string;
   firstNameEn: string;
   midNameEn?: string;
-  lastNameEn: string;
+  lastNameEn?: string;
   displayName: string;
   displayNameAr?: string;
   displayNameEn?: string;

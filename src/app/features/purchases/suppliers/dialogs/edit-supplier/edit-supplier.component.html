@@ -1,0 +1,127 @@
+<p-dialog
+  [(visible)]="visible"
+  [header]="'SUPPLIERS.EDIT_SUPPLIER' | translate"
+  [modal]="true"
+  [style]="{ width: '450px' }"
+  [draggable]="false"
+  [resizable]="false"
+  (onHide)="onCancel()"
+>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="flex flex-col gap-4 py-4">
+    <div class="flex flex-col gap-1">
+      <label for="nameEn" class="font-semibold">{{ 'SUPPLIERS.NAME_EN' | translate }}</label>
+      <input
+        pInputText
+        id="nameEn"
+        type="text"
+        formControlName="nameEn"
+        [placeholder]="'SUPPLIERS.ENTER_NAME_EN' | translate"
+      />
+      @if (
+        form.get('nameEn')?.invalid &&
+        (form.get('nameEn')?.dirty || form.get('nameEn')?.touched)
+      ) {
+        <small class="text-red-500">
+          @if (form.get('nameEn')?.errors?.['required']) {
+            {{ 'VALIDATION.REQUIRED' | translate }}
+          } @else if (form.get('nameEn')?.errors?.['minlength']) {
+            {{ 'VALIDATION.MIN_LENGTH' | translate:{value: 3} }}
+          } @else if (form.get('nameEn')?.errors?.['maxlength']) {
+            {{ 'VALIDATION.MAX_LENGTH' | translate:{value: 100} }}
+          } @else if (form.get('nameEn')?.errors?.['notEnglish']) {
+            {{ 'VALIDATION.ENGLISH_TEXT_ONLY' | translate }}
+          }
+        </small>
+      }
+    </div>
+    
+    <div class="flex flex-col gap-1">
+      <label for="nameAr" class="font-semibold">{{ 'SUPPLIERS.NAME_AR' | translate }}</label>
+      <input
+        pInputText
+        id="nameAr"
+        type="text"
+        formControlName="nameAr"
+        [placeholder]="'SUPPLIERS.ENTER_NAME_AR' | translate"
+      />
+      @if (
+        form.get('nameAr')?.invalid &&
+        (form.get('nameAr')?.dirty || form.get('nameAr')?.touched)
+      ) {
+        <small class="text-red-500">
+          @if (form.get('nameAr')?.errors?.['required']) {
+            {{ 'VALIDATION.REQUIRED' | translate }}
+          } @else if (form.get('nameAr')?.errors?.['minlength']) {
+            {{ 'VALIDATION.MIN_LENGTH' | translate:{value: 3} }}
+          } @else if (form.get('nameAr')?.errors?.['maxlength']) {
+            {{ 'VALIDATION.MAX_LENGTH' | translate:{value: 100} }}
+          } @else if (form.get('nameAr')?.errors?.['notArabic']) {
+            {{ 'VALIDATION.ARABIC_TEXT_ONLY' | translate }}
+          }
+        </small>
+      }
+    </div>
+    
+    <div class="flex flex-col gap-1">
+      <label for="phoneNumber" class="font-semibold">{{ 'SUPPLIERS.PHONE_NUMBER' | translate }}</label>
+      <input
+        pInputText
+        id="phoneNumber"
+        type="text"
+        formControlName="phoneNumber"
+        [placeholder]="'SUPPLIERS.ENTER_PHONE_NUMBER' | translate"
+      />
+      @if (
+        form.get('phoneNumber')?.invalid &&
+        (form.get('phoneNumber')?.dirty || form.get('phoneNumber')?.touched)
+      ) {
+        <small class="text-red-500">
+          @if (form.get('phoneNumber')?.errors?.['required']) {
+            {{ 'VALIDATION.REQUIRED' | translate }}
+          } @else if (form.get('phoneNumber')?.errors?.['pattern']) {
+            {{ 'VALIDATION.PHONE_FORMAT' | translate }}
+          }
+        </small>
+      }
+    </div>
+    
+    <div class="flex flex-col gap-1">
+      <label for="address" class="font-semibold">{{ 'SUPPLIERS.ADDRESS' | translate }}</label>
+      <input
+        pInputText
+        id="address"
+        type="text"
+        formControlName="address"
+        [placeholder]="'SUPPLIERS.ENTER_ADDRESS' | translate"
+      />
+      @if (
+        form.get('address')?.invalid &&
+        (form.get('address')?.dirty || form.get('address')?.touched)
+      ) {
+        <small class="text-red-500">
+          @if (form.get('address')?.errors?.['required']) {
+            {{ 'VALIDATION.REQUIRED' | translate }}
+          } @else if (form.get('address')?.errors?.['minlength']) {
+            {{ 'VALIDATION.MIN_LENGTH' | translate:{value: 5} }}
+          } @else if (form.get('address')?.errors?.['maxlength']) {
+            {{ 'VALIDATION.MAX_LENGTH' | translate:{value: 200} }}
+          }
+        </small>
+      }
+    </div>
+  </form>
+  
+  <ng-template pTemplate="footer">
+    <p-button
+      [label]="'DIALOG.CANCEL' | translate"
+      styleClass="p-button-text"
+      (onClick)="onCancel()"
+    ></p-button>
+    <p-button
+      [label]="'DIALOG.CONFIRM' | translate"
+      [disabled]="form.invalid || (loading$ | async)"
+      [loading]="loading$ | async"
+      (onClick)="onSubmit()"
+    ></p-button>
+  </ng-template>
+</p-dialog>

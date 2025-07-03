@@ -1,0 +1,32 @@
+<p-card>
+  <ng-template #header>
+    <div class="flex items-center justify-between p-6">
+      <div class="flex flex-col gap-1">
+        <h2 class="text-lg font-bold">
+          {{ 'SUPPLIERS.SUPPLIERS_LIST' | translate }}
+        </h2>
+        <p class="text-surface-300 text-sm font-medium">
+          {{ 'SUPPLIERS.SUPPLIERS_MANAGEMENT' | translate }}
+        </p>
+      </div>
+      <p-button
+        [label]="'SUPPLIERS.ADD_NEW_SUPPLIER' | translate"
+        (onClick)="showCreateSupplier.set(true)"
+      />
+    </div>
+    <p-divider class="my-0" styleClass="bg-surface-100" />
+  </ng-template>
+  <div class="flex flex-col gap-5">
+    <mtk-suppliers-table />
+  </div>
+</p-card>
+
+@if (showCreateSupplier()) {
+  <mtk-create-supplier
+    [(visible)]="showCreateSupplier"
+    (success)="onSupplierCreated()"
+  />
+}
+@if (showSuccessDialog()) {
+  <mtk-success-dialog [visible]="showSuccessDialog()" (visibleChange)="showSuccessDialog.set($event)" />
+}
